@@ -1,0 +1,6 @@
+1- Define Bias and Variance.
+Bias:
+When a model makes predictions, a disparity between the model's prediction values and actual values arises, and this difference is known as bias. Bias is the incapacity of machine learning algorithms like Linear Regression to grasp the real relationship between data points.
+
+Variance:
+If alternative training data were utilized, the variance would describe the degree of variation in the prediction. In layman's terms, variance describes how far a random variable deviates from its predicted value.
