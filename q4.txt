@@ -1,0 +1,65 @@
+# Linear And Logistic Regression difference
+Logistic regression and linear regression are both statistical models used for predictive analysis, but they are designed for different types of dependent variables and have distinct characteristics. Here's a comparison highlighting the key differences:
+
+### Dependent Variable
+- **Linear Regression:**
+  - **Type:** Continuous
+  - **Example:** Predicting house prices, temperature, etc.
+- **Logistic Regression:**
+  - **Type:** Categorical (Binary)
+  - **Example:** Predicting whether a customer will buy a product (yes/no), whether an email is spam (spam/not spam), etc.
+
+### Output
+- **Linear Regression:**
+  - **Output:** A continuous value that can theoretically range from negative to positive infinity.
+  - **Example:** \( y = \beta_0 + \beta_1x_1 + \beta_2x_2 + \ldots + \beta_px_p \)
+- **Logistic Regression:**
+  - **Output:** A probability value between 0 and 1, representing the likelihood of a certain class.
+  - **Example:** \( P(y=1) = \frac{1}{1 + e^{-(\beta_0 + \beta_1x_1 + \beta_2x_2 + \ldots + \beta_px_p)}} \)
+
+### Link Function
+- **Linear Regression:**
+  - **Link Function:** Identity function (no transformation).
+  - **Equation:** \( y = X\beta + \epsilon \)
+- **Logistic Regression:**
+  - **Link Function:** Logistic (sigmoid) function to transform the linear combination of inputs to a probability.
+  - **Equation:** \( P(y=1) = \frac{1}{1 + e^{-z}} \) where \( z = X\beta \)
+
+### Loss Function
+- **Linear Regression:**
+  - **Loss Function:** Mean Squared Error (MSE)
+  - **Equation:** \( \text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y_i})^2 \)
+- **Logistic Regression:**
+  - **Loss Function:** Log-Loss (Cross-Entropy Loss)
+  - **Equation:** \( \text{Log-Loss} = -\frac{1}{n} \sum_{i=1}^{n} [y_i \log(\hat{p_i}) + (1 - y_i) \log(1 - \hat{p_i})] \)
+
+### Model Interpretation
+- **Linear Regression:**
+  - **Interpretation:** The coefficients \( \beta \) represent the change in the dependent variable \( y \) for a one-unit change in the independent variable \( x \).
+- **Logistic Regression:**
+  - **Interpretation:** The coefficients \( \beta \) represent the log odds change of the dependent variable \( y \) for a one-unit change in the independent variable \( x \).
+
+### Assumptions
+- **Linear Regression:**
+  - Linearity between the dependent and independent variables.
+  - Independence of errors.
+  - Homoscedasticity (constant variance of errors).
+  - Normally distributed errors.
+- **Logistic Regression:**
+  - Linearity between the log odds of the dependent variable and the independent variables.
+  - Independence of errors.
+  - No strong multicollinearity among the predictors.
+
+### Applications
+- **Linear Regression:**
+  - Predicting continuous outcomes like sales, prices, or measurements.
+- **Logistic Regression:**
+  - Classifying binary outcomes like default/no default, pass/fail, success/failure.
+
+### Example Use Cases
+- **Linear Regression:**
+  - Predicting house prices based on features like size, location, and number of bedrooms.
+- **Logistic Regression:**
+  - Predicting the likelihood of a customer making a purchase based on features like browsing behavior, previous purchase history, and demographic information.
+
+In summary, while both linear and logistic regression are used for predictive modeling, linear regression is suitable for continuous outcomes, whereas logistic regression is used for binary classification problems.
