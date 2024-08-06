@@ -1,0 +1,39 @@
+Lasso (Least Absolute Shrinkage and Selection Operator) and Ridge Regression are both regularization techniques used in linear regression models to improve their performance and interpretability. Here's how they differ in their approach and the benefits they offer:
+
+### Lasso Regression
+- **Feature Selection:**
+  - **Mechanism:** Lasso adds a penalty equal to the absolute value of the magnitude of coefficients to the loss function. This is known as the L1 penalty.
+  - **Effect:** As the strength of the penalty increases, Lasso can shrink some coefficients exactly to zero, effectively removing them from the model.
+  - **Benefit:** This leads to a sparse model where only the most important features are selected, simplifying the model and enhancing interpretability.
+
+### Ridge Regression
+- **Reducing Overfitting:**
+  - **Mechanism:** Ridge adds a penalty equal to the square of the magnitude of coefficients to the loss function. This is known as the L2 penalty.
+  - **Effect:** The L2 penalty shrinks the coefficients towards zero but does not make them exactly zero. It reduces the complexity of the model by distributing the weights more evenly.
+  - **Benefit:** By shrinking the coefficients, Ridge helps prevent overfitting, particularly when dealing with multicollinearity or when the model has a large number of features relative to the number of observations.
+
+### Key Differences
+- **Penalty Type:**
+  - Lasso uses L1 penalty (\(\sum | \beta_j |\)).
+  - Ridge uses L2 penalty (\(\sum \beta_j^2\)).
+- **Feature Selection:**
+  - Lasso can select a subset of features by setting some coefficients to zero.
+  - Ridge retains all features but shrinks their coefficients.
+- **Use Case:**
+  - Use Lasso when you suspect that only a few features are important.
+  - Use Ridge when you believe most features contribute to the output but need regularization to avoid overfitting.
+
+### Mathematical Formulation
+Given a linear regression model \( y = X\beta + \epsilon \):
+
+- **Lasso Regression:**
+  \[
+  \text{Minimize } \left\{ \frac{1}{2n} \sum_{i=1}^{n} (y_i - X_i \beta)^2 + \lambda \sum_{j=1}^{p} | \beta_j | \right\}
+  \]
+
+- **Ridge Regression:**
+  \[
+  \text{Minimize } \left\{ \frac{1}{2n} \sum_{i=1}^{n} (y_i - X_i \beta)^2 + \lambda \sum_{j=1}^{p} \beta_j^2 \right\}
+  \]
+
+Where \( \lambda \) is the regularization parameter controlling the strength of the penalty.
